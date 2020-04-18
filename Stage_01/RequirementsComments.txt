@@ -1,0 +1,24 @@
+• In the main menu the user will choose an option among pantry,
+recipes, shopping list and weekly menu.
+• The user will be able to check/add/modify/remove/search ingredients
+of the pantry.
+• The user will be able to check/add/modify/remove, or search
+recipes by vegetarian, vegan, meat, without lactose, without
+gluten or using another filter, the recipes appear in alphabetical order.
+• The user will be able to check/add/modify/remove/search ingredients of the
+shopping list.
+• The user will be able to create/check/modify weekly menus. In
+order to create a weekly menu, the app will allow to do it in two
+diferent ways: randomly or manually. For this function, also
+diferent filter (as the recipes search) will be available.
+
+(NEW)
+
+• The user can modify the amount of portions os a recipe.
+• The application must allow add recipes to the shopping list dumping 
+their ingredients with their appropiates amounts.
+• The user can mark recipes as done subtracting the needed amount ingredients
+of the pantry.
+• The application must allow save weekly menus and named them, 
+the name can be will changed.
+• If there have saved menus, the user can create new one from one of them.
