@@ -148,12 +148,6 @@
                         </HBox>
                         <HBox alignment="CENTER" minHeight="50.0" prefHeight="50.0" prefWidth="238.0">
                             <children>
-                                <!--<FontAwesomeIcon fill="#fafafa" glyphName="SEARCH" selectionFill="#ee0f0f">
-                                   <HBox.margin>
-                                      <Insets right="8.0" />
-                                   </HBox.margin>
-                                </FontAwesomeIcon>
-                                -->
                                 <TextField promptText="Search..." />
                             </children>
                             <VBox.margin>
