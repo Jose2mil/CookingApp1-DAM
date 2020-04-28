@@ -13,7 +13,7 @@
         <RowConstraints />
     </rowConstraints>
     <children>
-        <BorderPane fx:id="borderPaneMainMenu" prefHeight="400.0" prefWidth="650.0" >
+        <BorderPane fx:id="borderPaneMainMenu" prefHeight="400.0" prefWidth="650.0" stylesheets="@../style/style.css">
             <center>
                 <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="45.0" BorderPane.alignment="CENTER">
                     <children>

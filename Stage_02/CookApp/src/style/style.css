@@ -1,0 +1,10 @@
+#borderPaneMainMenu {
+    -fx-background-image: url("../img/cordero.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+}
+
+.mainBtn {
+    -fx-color: #fee591;
+}
