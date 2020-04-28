@@ -1,4 +1,4 @@
-package init;
+package pantry;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -12,16 +12,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class initialController implements Initializable
+public class pantryController implements Initializable
 {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 
-    public void showPantryScreen(ActionEvent actionEvent) throws IOException
-    {
-        Parent home_page_parent = FXMLLoader.load(getClass().getResource("../pantry/pantry.fxml"));
+    public void backToMainWindow(ActionEvent actionEvent) throws IOException {
+        Parent home_page_parent = FXMLLoader.load(getClass().getResource("../init/initial.fxml"));
         Scene home_page_scene = new Scene(home_page_parent);
         Stage app_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
 
