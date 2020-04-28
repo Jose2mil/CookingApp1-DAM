@@ -31,7 +31,7 @@
                 <HBox alignment="CENTER_LEFT" prefHeight="72.0" prefWidth="653.0" spacing="20.0" BorderPane.alignment="CENTER_LEFT">
                     <children>
                         <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" text="+" />
-                        <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" text="-" />
+                        <Button fx:id="btnDeleteIngredient" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#deleteIngredient" text="-" />
                         <Button mnemonicParsing="false" text="Edit" />
                     </children>
                     <BorderPane.margin>

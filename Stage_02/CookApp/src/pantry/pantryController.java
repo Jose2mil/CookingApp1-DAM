@@ -10,12 +10,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import myClasses.Ingredient;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -36,6 +39,7 @@ public class pantryController implements Initializable
     public Label lbCarbs;
     public Label lbSalt;
     ObservableList<Ingredient> products;
+    Ingredient ingredientSelected;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -47,7 +51,9 @@ public class pantryController implements Initializable
                 {
                     @Override
                     public void changed(ObservableValue<? extends Ingredient> observableValue,
-                                        Ingredient ing, Ingredient ing1) {
+                                        Ingredient ing, Ingredient ing1)
+                    {
+                        if(ing1 != null)
                         {
                             lbKcal.setText(String.valueOf(ing1.getKcal()));
                             lbSugars.setText(String.valueOf(ing1.getSugars()));
@@ -57,6 +63,8 @@ public class pantryController implements Initializable
                             lbProtein.setText(String.valueOf(ing1.getProtein()));
                             lbCarbs.setText(String.valueOf(ing1.getCarbohydrates()));
                             lbSalt.setText(String.valueOf(ing1.getSalt()));
+
+                            ingredientSelected = ing1;
                         }
                     }
                 }
@@ -78,7 +86,6 @@ public class pantryController implements Initializable
         try
         {
             List<String> lines = Files.readAllLines(Paths.get("src/files/ingredients.txt"));
-            System.out.println(lines.size());
             return lines.stream()
                     .map(line -> new Ingredient(line.split(";")[0],
                             Short.parseShort(line.split(";")[1]),
@@ -95,6 +102,40 @@ public class pantryController implements Initializable
                     .collect(Collectors.toList());
         } catch (Exception e) {
             return new ArrayList<>();
+        }
+    }
+
+    public void deleteIngredient(ActionEvent actionEvent) {
+
+        if(ingredientSelected != null) {
+            products.remove(ingredientSelected);
+            PrintWriter listOfIngredients = null;
+            try
+            {
+                listOfIngredients = new PrintWriter("src/files/ingredients.txt");
+                for(int i = 0; i < products.size(); i++)
+                    listOfIngredients.println(
+                    products.get(i).getName() + ";" + products.get(i).getAmount() + ";"
+                    + products.get(i).getUnitOfMeasurement() + ";" + products.get(i).getKcal() + ";"
+                    + products.get(i).getLipidFats() + ";" + products.get(i).getSaturatedFats() + ";"
+                    + products. get(i).getCarbohydrates() + ";" + products.get(i).getSugars() + ";"
+                    + products.get(i).getProtein() + ";" + products.get(i).getFibre() + ";"
+                    + products.get(i).getSalt());
+
+            }
+            catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } finally {
+                listOfIngredients.close();
+            }
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error removing ingredient");
+            alert.setContentText("No ingredient selected");
+            alert.showAndWait();
         }
     }
 }
