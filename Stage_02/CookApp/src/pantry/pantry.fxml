@@ -148,7 +148,7 @@
                         </HBox>
                         <HBox alignment="CENTER" minHeight="50.0" prefHeight="50.0" prefWidth="238.0">
                             <children>
-                                <TextField promptText="Search..." />
+                                <TextField fx:id="txtSearchIngredient" onKeyPressed="#searchIngredient" promptText="Search..." />
                             </children>
                             <VBox.margin>
                                 <Insets top="30.0" />

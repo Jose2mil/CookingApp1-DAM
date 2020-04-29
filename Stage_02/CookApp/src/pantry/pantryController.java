@@ -13,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import myClasses.Ingredient;
 
@@ -38,13 +40,17 @@ public class pantryController implements Initializable
     public Label lbProtein;
     public Label lbCarbs;
     public Label lbSalt;
+    public TextField txtSearchIngredient;
     ObservableList<Ingredient> products;
+    List<Ingredient> copyProducts;
     Ingredient ingredientSelected;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         products = FXCollections.observableArrayList(readIngredients());
+        copyProducts = FXCollections.observableArrayList(readIngredients());
         listPantry.setItems(products.sorted());
+
 
         listPantry.getSelectionModel().selectedItemProperty().addListener(
                 new ChangeListener<Ingredient>()
@@ -136,6 +142,17 @@ public class pantryController implements Initializable
             alert.setHeaderText("Error removing ingredient");
             alert.setContentText("No ingredient selected");
             alert.showAndWait();
+        }
+    }
+
+    public void searchIngredient(KeyEvent keyEvent) {
+
+        products.clear();
+
+        for(int i = 0; i <copyProducts.size(); i++)
+        {
+            if(copyProducts.get(i).getName().contains(txtSearchIngredient.getText() + keyEvent.getText()))
+                products.add(copyProducts.get(i));
         }
     }
 }
