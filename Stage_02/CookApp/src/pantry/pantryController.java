@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 
 public class pantryController implements Initializable
 {
-    public ListView listPantry;
+    public ListView<Ingredient> listPantry;
     public Label lbKcal;
     public Label lbSugars;
     public Label lbFat;
@@ -43,7 +43,7 @@ public class pantryController implements Initializable
     public TextField txtSearchIngredient;
     ObservableList<Ingredient> products;
     List<Ingredient> copyProducts;
-    Ingredient ingredientSelected;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -69,8 +69,6 @@ public class pantryController implements Initializable
                             lbProtein.setText(String.valueOf(ing1.getProtein()));
                             lbCarbs.setText(String.valueOf(ing1.getCarbohydrates()));
                             lbSalt.setText(String.valueOf(ing1.getSalt()));
-
-                            ingredientSelected = ing1;
                         }
                     }
                 }
@@ -111,8 +109,9 @@ public class pantryController implements Initializable
         }
     }
 
-    public void deleteIngredient(ActionEvent actionEvent) {
-
+    public void deleteIngredient(ActionEvent actionEvent)
+    {
+        Ingredient ingredientSelected = listPantry.getSelectionModel().getSelectedItem();
         if(ingredientSelected != null) {
             products.remove(ingredientSelected);
             PrintWriter listOfIngredients = null;
