@@ -1,4 +1,4 @@
-package pantry;
+package scenes.pantry;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -16,7 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import myClasses.Ingredient;
+import objects.Ingredient;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -76,7 +76,7 @@ public class pantryController implements Initializable
     }
 
     public void backToMainWindow(ActionEvent actionEvent) throws IOException {
-        Parent home_page_parent = FXMLLoader.load(getClass().getResource("../init/initial.fxml"));
+        Parent home_page_parent = FXMLLoader.load(getClass().getResource("../initial/initial.fxml"));
         Scene home_page_scene = new Scene(home_page_parent);
         Stage app_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
 
@@ -89,19 +89,19 @@ public class pantryController implements Initializable
 
         try
         {
-            List<String> lines = Files.readAllLines(Paths.get("src/files/ingredients.txt"));
+            List<String> lines = Files.readAllLines(Paths.get("src/files/data/ingredients.txt"));
             return lines.stream()
-                    .map(line -> new Ingredient(line.split(";")[0],
-                            Short.parseShort(line.split(";")[1]),
-                            line.split(";")[2],
-                            Float.parseFloat(line.split(";")[3]),
-                            Float.parseFloat(line.split(";")[4]),
-                            Float.parseFloat(line.split(";")[5]),
-                            Float.parseFloat(line.split(";")[6]),
-                            Float.parseFloat(line.split(";")[7]),
-                            Float.parseFloat(line.split(";")[8]),
-                            Float.parseFloat(line.split(";")[9]),
-                            Float.parseFloat(line.split(";")[10]))
+                    .map(line -> new Ingredient(line.split(";")[0], //Name
+                            Short.parseShort(line.split(";")[1]), //
+                            line.split(";")[2], //UnitOfMeasurement
+                            Float.parseFloat(line.split(";")[3]), //Kcal
+                            Float.parseFloat(line.split(";")[4]), //LipidFats
+                            Float.parseFloat(line.split(";")[5]), //SaturatedFats
+                            Float.parseFloat(line.split(";")[6]), //Carbohydrates
+                            Float.parseFloat(line.split(";")[7]), //Sugars
+                            Float.parseFloat(line.split(";")[8]), //Protein
+                            Float.parseFloat(line.split(";")[9]), //Fibre
+                            Float.parseFloat(line.split(";")[10])) //Salt
                     )
                     .collect(Collectors.toList());
         } catch (Exception e) {
@@ -117,7 +117,7 @@ public class pantryController implements Initializable
             PrintWriter listOfIngredients = null;
             try
             {
-                listOfIngredients = new PrintWriter("src/files/ingredients.txt");
+                listOfIngredients = new PrintWriter("src/files/data/ingredients.txt");
                 for(int i = 0; i < products.size(); i++)
                     listOfIngredients.println(
                     products.get(i).getName() + ";" + products.get(i).getAmount() + ";"

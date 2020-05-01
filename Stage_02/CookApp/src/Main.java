@@ -1,5 +1,3 @@
-package init;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +8,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("initial.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("scenes/initial/initial.fxml"));
         primaryStage.setTitle("CookingApp");
         primaryStage.setScene(new Scene(root, 650, 400));
         primaryStage.show();

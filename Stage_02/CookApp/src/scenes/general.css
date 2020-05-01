@@ -1,12 +1,12 @@
 #borderPaneMainMenu {
-    -fx-background-image: url("../img/cordero.jpg");
+    -fx-background-image: url("../files/img/cordero.jpg");
     -fx-background-repeat: stretch;
     -fx-background-position: center center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
 }
 
 #borderPanePantry {
- -fx-background-image: url("../img/pizarra.jpg");
+ -fx-background-image: url("../files/img/pizarra.jpg");
     -fx-background-repeat: stretch;
     -fx-background-size: 900 506;
     -fx-background-position: center center;

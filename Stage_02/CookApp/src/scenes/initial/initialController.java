@@ -1,4 +1,4 @@
-package init;
+package scenes.initial;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

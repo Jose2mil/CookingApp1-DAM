@@ -1,9 +1,9 @@
-package myClasses;
+package objects;
 
 public class Ingredient implements Comparable<Ingredient>
 {
     String name;
-    short amount;
+    short amount; //TODO change to StockIngredient
     String unitOfMeasurement;
     float kcal;
     float lipidFats;
@@ -33,10 +33,10 @@ public class Ingredient implements Comparable<Ingredient>
         this.salt = salt;
     }
 
+    public short getAmount() { return amount; } //TODO change to StockIngredient
+
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-    public short getAmount() { return amount; }
-    public void setAmount(short amount) { this.amount = amount; }
     public String getUnitOfMeasurement() { return unitOfMeasurement; }
     public void setUnitOfMeasurement(String unitOfMeasurement) { this.unitOfMeasurement = unitOfMeasurement; }
     public float getKcal() { return kcal; }
