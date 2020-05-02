@@ -23,6 +23,6 @@ public class StockIngredient
     @Override
     public String toString()
     {
-        return ingredient.name + "  " + amount + " " + ingredient.unitOfMeasurement;
+        return ingredient.name + "  " + amount + "  " + ingredient.unitOfMeasurement;
     }
 }

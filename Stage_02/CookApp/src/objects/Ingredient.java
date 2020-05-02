@@ -3,7 +3,6 @@ package objects;
 public class Ingredient implements Comparable<Ingredient>
 {
     String name;
-    short amount; //TODO change to StockIngredient
     String unitOfMeasurement;
     float kcal;
     float lipidFats;
@@ -14,14 +13,12 @@ public class Ingredient implements Comparable<Ingredient>
     float fibre;
     float salt;
 
-    public Ingredient(String name, short amount,
-                      String unitOfMeasurement, float kcal,
+    public Ingredient(String name, String unitOfMeasurement, float kcal,
                       float lipidFats, float saturatedFats,
                       float carbohydrates, float sugars,
                       float protein, float fibre, float salt)
     {
         this.name = name;
-        this.amount = amount;
         this.unitOfMeasurement = unitOfMeasurement;
         this.kcal = kcal;
         this.lipidFats = lipidFats;
@@ -32,8 +29,6 @@ public class Ingredient implements Comparable<Ingredient>
         this.fibre = fibre;
         this.salt = salt;
     }
-
-    public short getAmount() { return amount; } //TODO change to StockIngredient
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -59,7 +54,9 @@ public class Ingredient implements Comparable<Ingredient>
     @Override
     public String toString()
     {
-        return name + "  " + amount + " " + unitOfMeasurement;
+        return name + ";" + unitOfMeasurement + ";" + kcal + ";" + lipidFats
+                + ";" + saturatedFats + ";" + carbohydrates + ";" + sugars
+                + ";" + protein + ";" + fibre + ";" + salt;
     }
 
     @Override

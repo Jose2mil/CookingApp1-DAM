@@ -1,0 +1,8 @@
+olive oil;2000
+natural yogurt;0
+flour;350
+white sugar;250
+butter;250
+eggs;24
+cocoa powder;1500
+bacon;200
