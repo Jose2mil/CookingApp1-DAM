@@ -153,50 +153,45 @@ public class PantryController implements Initializable
 
     public void addIngredient(ActionEvent actionEvent)
     {
-        // Create the custom dialog.
+        // Create the custom dialog and his controls and containers.
         Dialog dialog = new Dialog<>();
+        ButtonType addButton = new ButtonType("Add", ButtonBar.ButtonData.OK_DONE);
+        GridPane grid = new GridPane();
+        TextField amount = new TextField();
+        ChoiceBox<Ingredient> choiceBox = new ChoiceBox<>();
+        Label lblUnit = new Label("");
 
+        createDialogStructure(
+                dialog, addButton, grid, amount, choiceBox, lblUnit);
+        setInputDataChecksInDialog(
+                dialog, choiceBox, lblUnit, amount, addButton);
+        dialogOutputDataPreparation(
+                dialog, addButton, choiceBox, amount);
+    }
+
+    private void createDialogStructure(Dialog dialog, ButtonType addButton,
+                                       GridPane grid, TextField amount,
+                                       ChoiceBox<Ingredient> choiceBox, Label lblUnit)
+    {
         dialog.setTitle("New ingredient");
         dialog.setHeaderText("Add a new ingredient to your pantry");
-
-        // Set the icon (must be included in the project).
         dialog.setGraphic(new ImageView(this.getClass().getResource("../../files/img/apple.png").toString()));
 
-        // Set the button types.
-        ButtonType addButton = new ButtonType("Add", ButtonBar.ButtonData.OK_DONE);
         dialog.getDialogPane().getButtonTypes().addAll(addButton, ButtonType.CANCEL);
 
-        // Create labels and fields.
-        GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
         grid.setPadding(new Insets(20, 10, 10, 10));
 
-        TextField amount = new TextField();
         amount.setMaxWidth(90);
         amount.setPromptText("Amount");
+        amount.setDisable(true);
 
-        ChoiceBox<Ingredient> choiceBox = new ChoiceBox<>();
         choiceBox.setPrefWidth(150);
         amount.setPrefWidth(150);
 
-        for(String keyName : InitialController.ingredients.keySet())
-        {
-            boolean found = false;
-            int index = 0;
+        fillChoiceBoxWithIngredients(choiceBox);
 
-            while(! found && index < stockList.size())
-            {
-                if(keyName.equals(stockList.get(index).getIngredient().getName()))
-                    found = true;
-                index++;
-            }
-
-            if(! found)
-                choiceBox.getItems().add(InitialController.ingredients.get(keyName));
-        }
-
-        Label lblUnit = new Label("");
         lblUnit.setPadding(new Insets(0, 0, 0, 100));
 
         grid.add(new Label("Ingredient:"), 0, 0);
@@ -205,8 +200,13 @@ public class PantryController implements Initializable
         grid.add(lblUnit, 1, 1);
         grid.add(amount, 1, 1);
 
-        amount.setDisable(true);
+        dialog.getDialogPane().setContent(grid);
+    }
 
+    private void setInputDataChecksInDialog(Dialog dialog, ChoiceBox choiceBox,
+                                            Label lblUnit, TextField amount,
+                                            ButtonType addButton)
+    {
         choiceBox.valueProperty().addListener(new ChangeListener<Ingredient>() {
             @Override
             public void changed(ObservableValue<? extends Ingredient> observableValue,
@@ -241,14 +241,16 @@ public class PantryController implements Initializable
                 }
             }
         });
+    }
 
-        dialog.getDialogPane().setContent(grid);
-
+    private void dialogOutputDataPreparation(Dialog dialog, ButtonType addButton,
+                                             ChoiceBox choiceBox, TextField amount)
+    {
         // Convert the result when the button is clicked.
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == addButton)
             {
-                    return new Pair<>(choiceBox.getValue(), amount.getText());
+                return new Pair<>(choiceBox.getValue(), amount.getText());
             }
             return null;
         });
@@ -262,6 +264,25 @@ public class PantryController implements Initializable
 
             saveAndUpdateStockIngredients();
         });
+    }
+
+    private void fillChoiceBoxWithIngredients(ChoiceBox choiceBox)
+    {
+        for(String keyName : InitialController.ingredients.keySet())
+        {
+            boolean found = false;
+            int index = 0;
+
+            while(! found && index < stockList.size())
+            {
+                if(keyName.equals(stockList.get(index).getIngredient().getName()))
+                    found = true;
+                index++;
+            }
+
+            if(! found)
+                choiceBox.getItems().add(InitialController.ingredients.get(keyName));
+        }
     }
 
     public void searchIngredient(KeyEvent keyEvent)

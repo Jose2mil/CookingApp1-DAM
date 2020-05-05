@@ -1,7 +1,6 @@
 bacon;150
-butter;1
 eggs;10
 flour;400
 natural yogurt;200
-olive oil;34
-cocoa powder;1
+olive oil;45
+white sugar;30
