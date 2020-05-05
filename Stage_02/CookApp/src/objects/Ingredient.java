@@ -54,9 +54,7 @@ public class Ingredient implements Comparable<Ingredient>
     @Override
     public String toString()
     {
-        return name + ";" + unitOfMeasurement + ";" + kcal + ";" + lipidFats
-                + ";" + saturatedFats + ";" + carbohydrates + ";" + sugars
-                + ";" + protein + ";" + fibre + ";" + salt;
+        return name;
     }
 
     @Override

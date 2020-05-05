@@ -1,6 +1,6 @@
 package objects;
 
-public class StockIngredient
+public class StockIngredient implements Comparable<StockIngredient>
 {
     Ingredient ingredient;
     short amount;
@@ -24,5 +24,12 @@ public class StockIngredient
     public String toString()
     {
         return ingredient.name + "  " + amount + "  " + ingredient.unitOfMeasurement;
+    }
+
+    @Override
+    public int compareTo(StockIngredient stockIngredient)
+    {
+        return ingredient.getName().compareTo(
+                stockIngredient.getIngredient().getName());
     }
 }
