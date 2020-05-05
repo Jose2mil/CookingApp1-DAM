@@ -237,7 +237,7 @@ public class PantryController implements Initializable
             public void changed(ObservableValue<? extends String> observable, String oldValue,
                                 String newValue) {
                 if (!newValue.matches("\\d*")) {
-                    amount.setText(newValue.replaceAll("[^\\d]", ""));
+                    amount.setText(newValue.replaceAll("[^\\d]|", ""));
                 }
             }
         });
@@ -250,7 +250,17 @@ public class PantryController implements Initializable
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == addButton)
             {
-                return new Pair<>(choiceBox.getValue(), amount.getText());
+                if(Integer.parseInt(amount.getText()) == 0)
+                {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Error adding ingredient");
+                    alert.setContentText("Amount can't be 0");
+                    alert.showAndWait();
+                }
+
+                else
+                    return new Pair<>(choiceBox.getValue(), amount.getText());
             }
             return null;
         });

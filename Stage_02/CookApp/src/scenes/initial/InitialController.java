@@ -49,7 +49,6 @@ public class InitialController implements Initializable {
             }
         } catch (Exception e)
         {
-            readIngredients();
             ingredients.clear();
         }
     }
