@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CookApp/files/data/stock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/files/data/stock.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CookApp/scenes/pantry/PantryController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/scenes/pantry/PantryController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/files/data/ingredients.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/data/ingredients.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/files/data/stock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/data/stock.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scenes/pantry/PantryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/pantry/PantryController.java" afterDir="false" />
     </list>
@@ -118,12 +117,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -135,6 +128,12 @@
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -235,33 +234,33 @@
     <state x="-903" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588335795500" />
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588410229997" />
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588625722663" />
-    <state width="1323" height="26" key="GridCell.Tab.0.bottom" timestamp="1588676091017">
+    <state width="1323" height="158" key="GridCell.Tab.0.bottom" timestamp="1588800440522">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106789" />
-    <state width="1323" height="26" key="GridCell.Tab.0.bottom/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588676091017" />
+    <state width="1323" height="158" key="GridCell.Tab.0.bottom/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588800440522" />
     <state width="1306" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
-    <state width="1323" height="26" key="GridCell.Tab.0.center" timestamp="1588676091016">
+    <state width="1323" height="158" key="GridCell.Tab.0.center" timestamp="1588800440521">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.center/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.center/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106788" />
-    <state width="1323" height="26" key="GridCell.Tab.0.center/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588676091016" />
+    <state width="1323" height="158" key="GridCell.Tab.0.center/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588800440521" />
     <state width="1306" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
-    <state width="1323" height="26" key="GridCell.Tab.0.left" timestamp="1588676091016">
+    <state width="1323" height="158" key="GridCell.Tab.0.left" timestamp="1588800440521">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.left/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.left/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106788" />
-    <state width="1323" height="26" key="GridCell.Tab.0.left/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588676091016" />
+    <state width="1323" height="158" key="GridCell.Tab.0.left/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588800440521" />
     <state width="1306" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
-    <state width="1323" height="26" key="GridCell.Tab.0.right" timestamp="1588676091017">
+    <state width="1323" height="158" key="GridCell.Tab.0.right" timestamp="1588800440521">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.right/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.right/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106788" />
-    <state width="1323" height="26" key="GridCell.Tab.0.right/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588676091017" />
+    <state width="1323" height="158" key="GridCell.Tab.0.right/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588800440521" />
     <state width="1306" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
     <state width="1323" height="21" key="GridCell.Tab.1.bottom" timestamp="1588063018636">
       <screen x="0" y="0" width="1366" height="728" />
@@ -289,5 +288,9 @@
     <state x="-987" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588335755844" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588685003018" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588689306360" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1588799491549">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588799491549" />
   </component>
 </project>

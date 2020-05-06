@@ -142,13 +142,9 @@ public class PantryController implements Initializable
         }
 
         else
-        {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error removing ingredient");
-            alert.setContentText("No ingredient selected");
-            alert.showAndWait();
-        }
+            showAlert("Error",
+                    "Error removing ingredient",
+                    "No ingredient selected");
     }
 
     public void addIngredient(ActionEvent actionEvent)
@@ -204,49 +200,6 @@ public class PantryController implements Initializable
         dialog.getDialogPane().setContent(grid);
     }
 
-    public void editIngredient(ActionEvent actionEvent)
-    {
-        StockIngredient stockIngredientSelected = listPantry.getSelectionModel().getSelectedItem();
-        if(stockIngredientSelected != null)
-        {
-            TextInputDialog dialog = new TextInputDialog(stockIngredientSelected.getAmount() + "");
-            dialog.setTitle("Edit amount");
-            dialog.setHeaderText(stockIngredientSelected.getIngredient().getName());
-            dialog.setContentText("Enter the new amount:");
-
-            Optional<String> result = dialog.showAndWait();
-
-            if(isIntegerGreaterThanZero(result.get()))
-            {
-                result.ifPresent(newStockIngredient -> {
-                    for (StockIngredient s : stockList) {
-                        if(s.equals(stockIngredientSelected)) {
-                            s.setAmount(Short.parseShort(result.get()));
-                        }
-                    }
-                    saveAndUpdateStockIngredients();
-                });
-            }
-            else
-            {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Error editing ingredient");
-                alert.setContentText("Amount must be an integer greater than 0");
-                alert.showAndWait();
-
-            }
-        }
-        else
-        {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error editing ingredient");
-            alert.setContentText("No ingredient selected");
-            alert.showAndWait();
-        }
-    }
-
     private void setInputDataChecksInDialog(Dialog dialog, ChoiceBox choiceBox,
                                             Label lblUnit, TextField amount,
                                             ButtonType addButton)
@@ -296,11 +249,9 @@ public class PantryController implements Initializable
             {
                 if(Integer.parseInt(amount.getText()) == 0)
                 {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText("Error adding ingredient");
-                    alert.setContentText("Amount can't be 0");
-                    alert.showAndWait();
+                    showAlert("Error",
+                            "Error adding ingredient",
+                            "Amount can't be 0");
                 }
 
                 else
@@ -339,17 +290,35 @@ public class PantryController implements Initializable
         }
     }
 
-    public void searchIngredient(KeyEvent keyEvent)
+    public void editIngredient(ActionEvent actionEvent)
     {
-        ObservableList<StockIngredient> stockListCopy = FXCollections.observableArrayList();
-        String subString = (txtSearchIngredient.getText() + keyEvent.getText()).toUpperCase();
+        StockIngredient stockIngredientSelected = listPantry.getSelectionModel().getSelectedItem();
+        if(stockIngredientSelected != null)
+        {
+            TextInputDialog dialog = new TextInputDialog(stockIngredientSelected.getAmount() + "");
+            dialog.setTitle("Edit amount");
+            dialog.setHeaderText(stockIngredientSelected.getIngredient().getName());
+            dialog.setContentText("Enter the new amount:");
 
-        for(int i = 0; i <stockList.size(); i++)
-            if(stockList.get(i).getIngredient().getName().toUpperCase().contains(subString))
-                stockListCopy.add(stockList.get(i));
+            Optional<String> result = dialog.showAndWait();
 
-        listPantry.setItems(stockListCopy);
+            if(! result.isEmpty() && isIntegerGreaterThanZero(result.get()))
+            {
+                stockList.get(listPantry.getSelectionModel().getSelectedIndex())
+                        .setAmount(Short.parseShort(result.get()));
+                saveAndUpdateStockIngredients();
+            }
+            else if(! result.isEmpty())
+                showAlert("Error",
+                        "Error editing ingredient",
+                        "Amount must be an integer greater than 0");
+        }
+        else
+            showAlert("Error",
+                    "Error editing ingredient",
+                    "No ingredient selected");
     }
+
     public static boolean isIntegerGreaterThanZero(String strNum) {
         int num;
         if (strNum == null) {
@@ -364,5 +333,26 @@ public class PantryController implements Initializable
             return false;
         else
             return true;
+    }
+
+    public void searchIngredient(KeyEvent keyEvent)
+    {
+        ObservableList<StockIngredient> stockListCopy = FXCollections.observableArrayList();
+        String subString = (txtSearchIngredient.getText() + keyEvent.getText()).toUpperCase();
+
+        for(int i = 0; i <stockList.size(); i++)
+            if(stockList.get(i).getIngredient().getName().toUpperCase().contains(subString))
+                stockListCopy.add(stockList.get(i));
+
+        listPantry.setItems(stockListCopy);
+    }
+
+    private void showAlert(String title, String header, String context)
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(context);
+        alert.showAndWait();
     }
 }

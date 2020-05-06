@@ -33,7 +33,7 @@
                     <children>
                         <Button fx:id="btnAddIngredient" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#addIngredient" text="+" />
                         <Button fx:id="btnDeleteIngredient" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#deleteStockIngredient" text="-" />
-                        <Button mnemonicParsing="false" text="Edit" />
+                        <Button fx:id="btnEditIngredient" mnemonicParsing="false" onAction="#editIngredient" text="Edit" />
                     </children>
                     <BorderPane.margin>
                         <Insets />
