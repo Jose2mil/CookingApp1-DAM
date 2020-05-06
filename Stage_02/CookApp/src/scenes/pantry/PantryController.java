@@ -169,6 +169,7 @@ public class PantryController implements Initializable
                 dialog, addButton, choiceBox, amount);
     }
 
+
     private void createDialogStructure(Dialog dialog, ButtonType addButton,
                                        GridPane grid, TextField amount,
                                        ChoiceBox<Ingredient> choiceBox, Label lblUnit)
@@ -201,6 +202,49 @@ public class PantryController implements Initializable
         grid.add(amount, 1, 1);
 
         dialog.getDialogPane().setContent(grid);
+    }
+
+    public void editIngredient(ActionEvent actionEvent)
+    {
+        StockIngredient stockIngredientSelected = listPantry.getSelectionModel().getSelectedItem();
+        if(stockIngredientSelected != null)
+        {
+            TextInputDialog dialog = new TextInputDialog(stockIngredientSelected.getAmount() + "");
+            dialog.setTitle("Edit amount");
+            dialog.setHeaderText(stockIngredientSelected.getIngredient().getName());
+            dialog.setContentText("Enter the new amount:");
+
+            Optional<String> result = dialog.showAndWait();
+
+            if(isIntegerGreaterThanZero(result.get()))
+            {
+                result.ifPresent(newStockIngredient -> {
+                    for (StockIngredient s : stockList) {
+                        if(s.equals(stockIngredientSelected)) {
+                            s.setAmount(Short.parseShort(result.get()));
+                        }
+                    }
+                    saveAndUpdateStockIngredients();
+                });
+            }
+            else
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error editing ingredient");
+                alert.setContentText("Amount must be an integer greater than 0");
+                alert.showAndWait();
+
+            }
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error editing ingredient");
+            alert.setContentText("No ingredient selected");
+            alert.showAndWait();
+        }
     }
 
     private void setInputDataChecksInDialog(Dialog dialog, ChoiceBox choiceBox,
@@ -305,5 +349,20 @@ public class PantryController implements Initializable
                 stockListCopy.add(stockList.get(i));
 
         listPantry.setItems(stockListCopy);
+    }
+    public static boolean isIntegerGreaterThanZero(String strNum) {
+        int num;
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            num = Integer.parseInt(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        if(num <= 0 )
+            return false;
+        else
+            return true;
     }
 }
