@@ -1,1 +1,6 @@
-Tomato;12
+bacon;150
+eggs;10
+flour;400
+natural yogurt;200
+olive oil;45
+white sugar;30
