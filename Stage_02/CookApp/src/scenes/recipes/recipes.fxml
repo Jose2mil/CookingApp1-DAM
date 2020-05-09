@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenes.recipes.RecipesController">
+   <children>
+      <BorderPane fx:id="borderPaneRecipe" maxWidth="650.0" minWidth="650.0" prefHeight="400.0" prefWidth="650.0">
+         <left>
+            <ListView fx:id="lstRecipes" maxWidth="216.0" minWidth="180.0" prefHeight="360.0" prefWidth="216.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="20.0" top="15.0" />
+               </BorderPane.margin></ListView>
+         </left>
+         <bottom>
+            <HBox prefHeight="77.0" prefWidth="524.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets left="40.0" top="25.0" />
+               </padding>
+               <children>
+                  <Label fx:id="lblFilter" prefHeight="21.0" prefWidth="56.0" text="Filters:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                     <CheckBox fx:id="cbxVegetarian" mnemonicParsing="false" onAction="#applyFilters" text="Vegetarian" textFill="#ddd4d4" />
+                     <CheckBox fx:id="cbxVegan" mnemonicParsing="false" onAction="#applyFilters" text="Vegan" textFill="WHITE" />
+                     <CheckBox fx:id="cbxNoLactose" mnemonicParsing="false" onAction="#applyFilters" text="No Lactose" textFill="WHITE" />
+                     <CheckBox fx:id="cbxNoGluten" mnemonicParsing="false" onAction="#applyFilters" text="No Gluten" textFill="WHITE" />
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" spacing="35.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="txtSearch" onKeyPressed="#searchRecipe" prefHeight="25.0" prefWidth="244.0" promptText="Search...">
+                     <VBox.margin>
+                        <Insets right="35.0" top="100.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <HBox prefHeight="25.0" prefWidth="320.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="btnAdd" mnemonicParsing="false" text="Add Recipe" textFill="#362d2d" />
+                        <Button fx:id="btnEdit" mnemonicParsing="false" text="Edit Recipe" />
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteRecipe" text="Delete Recipe" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnView" mnemonicParsing="false" text="View Recipe" />
+                  <Button fx:id="btnBack" mnemonicParsing="false" onAction="#backToMainWindow" text="Go back">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+   <stylesheets>
+      <URL value="@recipes.css" />
+      <URL value="@../general.css" />
+   </stylesheets>
+</AnchorPane>

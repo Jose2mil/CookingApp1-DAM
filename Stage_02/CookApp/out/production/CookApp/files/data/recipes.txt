@@ -1,0 +1,16 @@
+Receta01
+1
+paso01;paso02;paso03;
+Bacon:300;Salt:10
+Sarten
+250
+3
+Vegetarian;No Gluten
+Receta02
+2
+paso01;paso02;paso03;
+Bacon:250;Salt:15
+Sarten;Plato
+270
+6
+Vegan;No Gluten

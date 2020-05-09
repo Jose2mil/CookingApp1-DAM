@@ -18,17 +18,12 @@
             <center>
                 <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="45.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Button fx:id="btnRecipies" minWidth="120.0" mnemonicParsing="false" styleClass="mainBtn" text="Recipes" textFill="#5b3d04">
+                        <Button fx:id="btnRecipies" minWidth="120.0" mnemonicParsing="false" onAction="#showRecipesScreen" styleClass="mainBtn" text="Recipes" textFill="#5b3d04">
                             <font>
                                 <Font name="System Bold" size="13.0" />
                             </font>
                         </Button>
                         <Button minWidth="120.0" mnemonicParsing="false" styleClass="mainBtn" text="Weekly Menu" textFill="#5b3d04">
-                            <font>
-                                <Font name="System Bold" size="13.0" />
-                            </font>
-                        </Button>
-                        <Button minWidth="120.0" mnemonicParsing="false" styleClass="mainBtn" text="Shopping List" textFill="#5b3d04">
                             <font>
                                 <Font name="System Bold" size="13.0" />
                             </font>

@@ -55,7 +55,17 @@ public class InitialController implements Initializable {
 
     public void showPantryScreen(ActionEvent actionEvent) throws IOException
     {
-        Parent home_page_parent = FXMLLoader.load(getClass().getResource("../pantry/pantry.fxml"));
+        showNewScreen(actionEvent, "../pantry/pantry.fxml");
+    }
+
+    public void showRecipesScreen(ActionEvent actionEvent) throws IOException
+    {
+        showNewScreen(actionEvent, "../recipes/recipes.fxml");
+    }
+
+    public void showNewScreen(ActionEvent actionEvent, String path) throws IOException
+    {
+        Parent home_page_parent = FXMLLoader.load(getClass().getResource(path));
         Scene home_page_scene = new Scene(home_page_parent);
         Stage app_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
 

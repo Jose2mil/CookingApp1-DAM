@@ -4,9 +4,13 @@
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CookApp/files/data/stock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/files/data/stock.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CookApp/scenes/pantry/PantryController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/scenes/pantry/PantryController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CookApp/scenes/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/scenes/general.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CookApp/scenes/initial/initial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/scenes/initial/initial.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CookApp/scenes/initial/initialController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/scenes/initial/initialController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/files/data/stock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/data/stock.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/pantry/PantryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/pantry/PantryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/general.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/initial/InitialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/initial/InitialController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/initial/initial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/initial/initial.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +79,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1b55XNB1cZsWfuY1ao3p1KJgtfB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -85,6 +91,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -95,25 +102,26 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Trimestre3/testing/SalesList" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/scenes/recipes" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Equipo\Desktop\Jose\ESTUDIOS\DAM\EntornosDeDesarrollo\EjerciciosYTrabajos\FinalProyect\CookingApp1ºDAM\Stage_02\CookApp\src\scenes" />
-      <recent name="C:\Users\Equipo\Desktop\Jose\ESTUDIOS\DAM\EntornosDeDesarrollo\EjerciciosYTrabajos\FinalProyect\CookingApp1ºDAM\Stage_02\CookApp\src\files\datas" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="scenes" />
       <recent name="" />
       <recent name="files" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Equipo\Desktop\Jose\ESTUDIOS\DAM\EntornosDeDesarrollo\EjerciciosYTrabajos\FinalProyect\CookingApp1ºDAM\Stage_02\CookApp\src\scenes\recipes" />
       <recent name="C:\Users\Equipo\Desktop\Jose\ESTUDIOS\DAM\EntornosDeDesarrollo\EjerciciosYTrabajos\FinalProyect\CookingApp1ºDAM\Stage_02\CookApp\src\scenes\initial" />
       <recent name="C:\Users\Equipo\Desktop\Jose\ESTUDIOS\DAM\EntornosDeDesarrollo\EjerciciosYTrabajos\FinalProyect\CookingApp1ºDAM\Stage_02\CookApp\src\scenes\pantry" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="myClasses" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Equipo\Desktop\Jose\ESTUDIOS\DAM\EntornosDeDesarrollo\EjerciciosYTrabajos\FinalProyect\CookingApp1ºDAM\Stage_02\CookApp\src\scenes" />
+      <recent name="C:\Users\Equipo\Desktop\Jose\ESTUDIOS\DAM\EntornosDeDesarrollo\EjerciciosYTrabajos\FinalProyect\CookingApp1ºDAM\Stage_02\CookApp\src\files\datas" />
     </key>
   </component>
   <component name="RunManager">
@@ -208,13 +216,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1588632277374">
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1588970871361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588632277374" />
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588970871361" />
     <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1587909437528" />
     <state x="413" y="140" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1588060106364">
       <screen x="0" y="0" width="1366" height="728" />
@@ -234,33 +243,33 @@
     <state x="-903" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588335795500" />
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588410229997" />
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588625722663" />
-    <state width="1323" height="158" key="GridCell.Tab.0.bottom" timestamp="1588800440522">
+    <state width="1323" height="158" key="GridCell.Tab.0.bottom" timestamp="1589028245261">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106789" />
-    <state width="1323" height="158" key="GridCell.Tab.0.bottom/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588800440522" />
+    <state width="1323" height="158" key="GridCell.Tab.0.bottom/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589028245261" />
     <state width="1306" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
-    <state width="1323" height="158" key="GridCell.Tab.0.center" timestamp="1588800440521">
+    <state width="1323" height="158" key="GridCell.Tab.0.center" timestamp="1589028245260">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.center/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.center/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106788" />
-    <state width="1323" height="158" key="GridCell.Tab.0.center/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588800440521" />
+    <state width="1323" height="158" key="GridCell.Tab.0.center/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589028245260" />
     <state width="1306" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
-    <state width="1323" height="158" key="GridCell.Tab.0.left" timestamp="1588800440521">
+    <state width="1323" height="158" key="GridCell.Tab.0.left" timestamp="1589028245258">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.left/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.left/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106788" />
-    <state width="1323" height="158" key="GridCell.Tab.0.left/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588800440521" />
+    <state width="1323" height="158" key="GridCell.Tab.0.left/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589028245258" />
     <state width="1306" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
-    <state width="1323" height="158" key="GridCell.Tab.0.right" timestamp="1588800440521">
+    <state width="1323" height="158" key="GridCell.Tab.0.right" timestamp="1589028245261">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.right/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.right/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106788" />
-    <state width="1323" height="158" key="GridCell.Tab.0.right/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588800440521" />
+    <state width="1323" height="158" key="GridCell.Tab.0.right/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589028245261" />
     <state width="1306" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
     <state width="1323" height="21" key="GridCell.Tab.1.bottom" timestamp="1588063018636">
       <screen x="0" y="0" width="1366" height="728" />
@@ -288,9 +297,13 @@
     <state x="-987" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588335755844" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588685003018" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588689306360" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1588799491549">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1588962811793">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588799491549" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588962811793" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1588963013589">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588963013589" />
   </component>
 </project>
