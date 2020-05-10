@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CookApp/files/data/stock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/files/data/stock.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CookApp/scenes/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/scenes/general.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CookApp/scenes/initial/initial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/scenes/initial/initial.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CookApp/scenes/initial/initialController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CookApp/scenes/initial/initialController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/files/data/stock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/data/stock.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/general.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/initial/InitialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/initial/InitialController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/initial/initial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/initial/initial.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/files/data/recipes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/data/recipes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/recipes/RecipesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/recipes/RecipesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/recipes/recipes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/recipes/recipes.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +97,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/scenes/recipes" />
     <property name="recentsLimit" value="5" />
   </component>
@@ -243,33 +239,33 @@
     <state x="-903" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588335795500" />
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588410229997" />
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588625722663" />
-    <state width="1323" height="158" key="GridCell.Tab.0.bottom" timestamp="1589028245261">
+    <state width="1323" height="202" key="GridCell.Tab.0.bottom" timestamp="1589138113568">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106789" />
-    <state width="1323" height="158" key="GridCell.Tab.0.bottom/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589028245261" />
+    <state width="1323" height="202" key="GridCell.Tab.0.bottom/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589138113568" />
     <state width="1306" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
-    <state width="1323" height="158" key="GridCell.Tab.0.center" timestamp="1589028245260">
+    <state width="1323" height="202" key="GridCell.Tab.0.center" timestamp="1589138113567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.center/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.center/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106788" />
-    <state width="1323" height="158" key="GridCell.Tab.0.center/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589028245260" />
+    <state width="1323" height="202" key="GridCell.Tab.0.center/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589138113567" />
     <state width="1306" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
-    <state width="1323" height="158" key="GridCell.Tab.0.left" timestamp="1589028245258">
+    <state width="1323" height="202" key="GridCell.Tab.0.left" timestamp="1589138113566">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.left/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.left/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106788" />
-    <state width="1323" height="158" key="GridCell.Tab.0.left/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589028245258" />
+    <state width="1323" height="202" key="GridCell.Tab.0.left/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589138113566" />
     <state width="1306" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
-    <state width="1323" height="158" key="GridCell.Tab.0.right" timestamp="1589028245261">
+    <state width="1323" height="202" key="GridCell.Tab.0.right" timestamp="1589138113567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="134" key="GridCell.Tab.0.right/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588080430574" />
     <state width="1306" height="222" key="GridCell.Tab.0.right/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588409106788" />
-    <state width="1323" height="158" key="GridCell.Tab.0.right/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589028245261" />
+    <state width="1323" height="202" key="GridCell.Tab.0.right/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589138113567" />
     <state width="1306" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588438261260" />
     <state width="1323" height="21" key="GridCell.Tab.1.bottom" timestamp="1588063018636">
       <screen x="0" y="0" width="1366" height="728" />
@@ -297,6 +293,18 @@
     <state x="-987" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1588335755844" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1588685003018" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588689306360" />
+    <state x="173" y="-781" width="958" height="531" maximized="true" key="dock-window-1" timestamp="1589127119349">
+      <screen x="185" y="-768" width="1024" height="728" />
+    </state>
+    <state x="173" y="-781" width="958" height="531" maximized="true" key="dock-window-1/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589127119349" />
+    <state x="625" y="192" key="extract.method.dialog" timestamp="1589138441453">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="625" y="192" key="extract.method.dialog/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589138441453" />
+    <state x="65" y="0" key="new project wizard" timestamp="1589043828751">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="0" key="new project wizard/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1589043828751" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1588962811793">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -305,5 +313,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/185.-768.1024.728@0.0.1366.728" timestamp="1588963013589" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CookApp$Main.ic" NAME="Main Coverage Results" MODIFIED="1589136903621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>.*</FILTER>
+    </SUITE>
   </component>
 </project>

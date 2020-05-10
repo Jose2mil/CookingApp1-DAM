@@ -1,16 +1,37 @@
 Receta01
 1
-paso01;paso02;paso03;
+paso01;paso02;paso03
 Bacon:300;Salt:10
 Sarten
 250
 3
-Vegetarian;No Gluten
-Receta02
+Vegetarian;No GlutenReceta02
 2
-paso01;paso02;paso03;
+paso01;paso02;paso03
 Bacon:250;Salt:15
 Sarten;Plato
 270
 6
-Vegan;No Gluten
+No Gluten;VeganRecipe00
+1
+
+Apple:3;Carrot:45
+olla;cuchara
+11
+2
+Vegetarian;vegan;No lactose
+recetica
+1
+
+
+
+0
+0
+recetica2
+1
+
+
+
+0
+0
+
