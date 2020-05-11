@@ -1,0 +1,7 @@
+#listPantry{
+-fx-opacity: 0.5;
+}
+.list-cell {
+-fx-text-fill: #25146D;
+-fx-font-weight: bold;
+}

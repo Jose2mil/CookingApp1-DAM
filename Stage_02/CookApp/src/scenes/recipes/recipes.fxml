@@ -48,7 +48,7 @@
                         <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteRecipe" text="Delete Recipe" />
                      </children>
                   </HBox>
-                  <Button fx:id="btnView" mnemonicParsing="false" text="View Recipe" />
+                  <Button fx:id="btnView" mnemonicParsing="false" onAction="#viewRecipe" text="View Recipe" />
                   <Button fx:id="btnBack" mnemonicParsing="false" onAction="#backToMainWindow" text="Go back">
                      <VBox.margin>
                         <Insets />

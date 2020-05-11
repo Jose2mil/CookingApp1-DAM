@@ -307,4 +307,24 @@ public class RecipesController implements Initializable
                     "Error editing recipe",
                     "No recipe selected");
     }
+
+    public void viewRecipe(ActionEvent actionEvent)
+    {
+        Recipe recipeSelected = lstRecipes.getSelectionModel().getSelectedItem();
+        if(recipeSelected != null)
+        {
+            Recipe editedRecipe = new ViewDialogRecipe(recipeSelected).showAndReturnRecipe();
+            if(editedRecipe != null)
+            {
+                listRecipes.remove(recipeSelected);
+                listRecipes.add(editedRecipe);
+                saveAndUpdateRecipes();
+            }
+        }
+        else
+            showAlert("Error",
+                    "Error viewing recipe",
+                    "No recipe selected");
+
+    }
 }
