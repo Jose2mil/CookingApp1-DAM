@@ -1,11 +1,11 @@
 Receta01
-1
-paso01;paso02;paso03
-Bacon:300;Salt:10
-Sarten
-250
-3
-Vegetarian;No Gluten
+2
+paso01;paso02;pasoFinal
+Apple:3;Bacon:300;Salt:10
+Sarten;platillos
+240
+4
+No Lactose;No Gluten
 Receta02
 2
 paso01;paso02;paso03
@@ -22,3 +22,27 @@ olla;cuchara
 11
 2
 Vegetarian;vegan;No lactose
+holabuenas
+1
+paso0;paso1;paso2
+
+
+0
+0
+
+instrucciones
+1
+paso00;paso01;paso02;paso03
+
+
+0
+0
+
+nueva
+1
+
+
+
+0
+0
+

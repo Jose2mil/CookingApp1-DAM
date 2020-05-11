@@ -44,7 +44,7 @@
                   <HBox prefHeight="25.0" prefWidth="320.0" spacing="20.0">
                      <children>
                         <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addRecipe" text="Add Recipe" textFill="#362d2d" />
-                        <Button fx:id="btnEdit" mnemonicParsing="false" text="Edit Recipe" />
+                        <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#editRecipe" text="Edit Recipe" />
                         <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteRecipe" text="Delete Recipe" />
                      </children>
                   </HBox>

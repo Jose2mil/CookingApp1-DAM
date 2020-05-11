@@ -5,14 +5,16 @@ Bacon:300;Salt:10
 Sarten
 250
 3
-Vegetarian;No GlutenReceta02
+Vegetarian;No Gluten
+Receta02
 2
 paso01;paso02;paso03
 Bacon:250;Salt:15
 Sarten;Plato
 270
 6
-No Gluten;VeganRecipe00
+No Gluten;Vegan
+Recipe00
 1
 
 Apple:3;Carrot:45
@@ -20,14 +22,23 @@ olla;cuchara
 11
 2
 Vegetarian;vegan;No lactose
-recetica
+holabuenas
 1
-
+paso0;paso1;paso2
 
 
 0
 0
-recetica2
+
+instrucciones
+1
+paso00;paso01;paso02;paso03
+
+
+0
+0
+
+nueva
 1
 
 
