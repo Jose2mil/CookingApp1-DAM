@@ -1,5 +1,7 @@
 package scenes.recipes;
 
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import objects.Recipe;
 import objects.StockIngredient;
@@ -7,45 +9,49 @@ import objects.StockIngredient;
 import java.util.HashSet;
 import java.util.Optional;
 
-public class EditDialogRecipe extends DialogRecipes
+public class EditDialogRecipe extends IODialogRecipes
 {
     Recipe recipe;
+
     public EditDialogRecipe(Recipe recipe)
     {
         super();
         dialog.setHeaderText("Edit recipe");
-        tName.setEditable(false);
+        txtName.setEditable(false);
         this.recipe = recipe;
-        fillFields();
+        fillFieldsWithRecipeData();
+
+        ButtonType buttonAdd = new ButtonType("Edit", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().add(buttonAdd);
     }
 
-    private void fillFields()
+    private void fillFieldsWithRecipeData()
     {
-        tName.setText(recipe.getName());
-        tRations.setText(recipe.getAmountOfRations() + "");
-        typeChoices.getSelectionModel().select(recipe.getTypeOfFood() - 1);
-        tTime.setText(recipe.getTimeNeeded() + "");
+        txtName.setText(recipe.getName());
+        txtRations.setText(recipe.getAmountOfRations() + "");
+        chbTypeOfFood.getSelectionModel().select(recipe.getTypeOfFood() - 1);
+        txtNeededTime.setText(recipe.getTimeNeeded() + "");
 
-        ingredientsSelected.getItems().setAll(recipe.getIngredients());
-        for(StockIngredient stockIngredient : ingredientsSelected.getItems())
-            ingredientsList.getItems().remove(stockIngredient.getIngredient());
+        lstSelectedIngredients.getItems().setAll(recipe.getIngredients());
+        for(StockIngredient stockIngredient : lstSelectedIngredients.getItems())
+            lstAvailableIngredients.getItems().remove(stockIngredient.getIngredient());
 
         int index = 1;
         for(String instruction : recipe.getInstructions())
         {
-            txtAreaInstructions.appendText(instruction);
+            txaInstructions.appendText(instruction);
             if(index != recipe.getInstructions().size())
-                txtAreaInstructions.appendText("\n");
+                txaInstructions.appendText("\n");
 
             index++;
         }
 
-        gadgetsList.getItems().setAll(recipe.getGadgets());
+        lstGadgets.getItems().setAll(recipe.getGadgets());
 
-        selectCheckBox(cbVegetarian);
-        selectCheckBox(cbVegan);
-        selectCheckBox(cbLactose);
-        selectCheckBox(cbGluten);
+        selectCheckBox(cbxVegetarian);
+        selectCheckBox(cbxVegan);
+        selectCheckBox(cbxNoLactose);
+        selectCheckBox(cbxNoGluten);
     }
 
     private void selectCheckBox(CheckBox feature)
@@ -62,7 +68,7 @@ public class EditDialogRecipe extends DialogRecipes
         Optional<String> result = dialog.showAndWait();
 
         if(! result.isEmpty())
-            return collectDataAndReturnRecipe();
+            return collectDataAndReturnTheNewRecipe();
 
         return  null;
     }

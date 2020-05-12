@@ -61,63 +61,12 @@ public class Recipe implements Comparable<Recipe>
         return name.compareTo(recipe.getName());
     }
 
-    public void showSummarized()
+    @Override
+    public boolean equals(Object recipe)
     {
-        //TODO
-    }
+        if(recipe instanceof Recipe)
+            return name.equals(((Recipe)recipe).name);
 
-    public void showShort()
-    {
-        //TODO
-    }
-
-    public void showNutritionalInformation()
-    {
-        //TODO
-    }
-
-    public boolean contains(String text)
-    {
-        return true; //TODO
-    }
-
-    public void addFeature(String feature)
-    {
-        //TODO
-    }
-
-    public void removeFeature(String feature)
-    {
-        //TODO
-    }
-
-    public void addInstruction(String instruction)
-    {
-        //TODO
-    }
-
-    public void removeInstruction(String instruction)
-    {
-        //TODO
-    }
-
-    public void addIngredient(Ingredient ingredient)
-    {
-        //TODO
-    }
-
-    public void removeIngredient(String ingredientName)
-    {
-        //TODO
-    }
-
-    public void addGadget(String gadget)
-    {
-        //TODO
-    }
-
-    public void removeGadget(String gadget)
-    {
-        //TODO
+        return super.equals(recipe);
     }
 }

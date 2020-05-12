@@ -12,11 +12,8 @@ public class StockIngredient implements Comparable<StockIngredient>
     }
 
     public Ingredient getIngredient() { return ingredient; }
-
     public void setIngredient(Ingredient ingredient) { this.ingredient = ingredient; }
-
     public short getAmount() { return amount; }
-
     public void setAmount(short amount) { this.amount = amount; }
 
 

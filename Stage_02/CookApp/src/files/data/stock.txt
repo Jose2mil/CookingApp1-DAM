@@ -1,3 +1,4 @@
+Hake;34
 Potato;121
 Salt;78
-Hake;448
+Sugar;400

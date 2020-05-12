@@ -19,6 +19,8 @@ import java.io.*;
 import java.net.URL;
 import java.util.*;
 
+import static objects.IOUtils.*;
+
 public class RecipesController implements Initializable
 {
     public Button btnBack;
@@ -32,14 +34,14 @@ public class RecipesController implements Initializable
     public CheckBox cbxVegan;
     public CheckBox cbxNoLactose;
     public CheckBox cbxNoGluten;
-    ObservableList<Recipe> listRecipes;
+    ObservableList<Recipe> internalRecipeList;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        listRecipes = FXCollections.observableArrayList();
+        internalRecipeList = FXCollections.observableArrayList();
         readRecipes();
-        lstRecipes.setItems(listRecipes);
+        lstRecipes.setItems(internalRecipeList);
     }
 
     public void backToMainWindow(ActionEvent actionEvent) throws IOException
@@ -74,42 +76,15 @@ public class RecipesController implements Initializable
 
                 if(name != null && name.trim() != "")
                 {
-                    ArrayList<String> listInstructions = new ArrayList<>();
-                    if(! instructions.isEmpty())
-                    {
-                        String[] arrayInstructions = instructions.split(";");
-                        for (String instruction : arrayInstructions)
-                            listInstructions.add(instruction);
-                    }
+                    ArrayList<String> listInstructions =
+                            extractStringFromFormattedString(instructions);
+                    ArrayList<StockIngredient> listIngredients =
+                            extractIngredientsFromString(ingredients);
+                    ArrayList<String> listGadgets =
+                            extractStringFromFormattedString(gadgets);
+                    HashSet<String> hashSetFeatures = extractFeaturesFromString(features);
 
-                    ArrayList<StockIngredient> listIngredients = new ArrayList<>();
-                    if(! ingredients.isEmpty())
-                    {
-                        String[] arrayIngredients = ingredients.split(";");
-                        for (String line : arrayIngredients)
-                            listIngredients.add(
-                                    new StockIngredient(
-                                            InitialController.ingredients.get(line.split(":")[0]),
-                                            Short.parseShort(line.split(":")[1])));
-                    }
-
-                    ArrayList<String> listGadgets = new ArrayList<>();
-                    if(! gadgets.isEmpty())
-                    {
-                        String[] arrayGadgets = gadgets.split(";");
-                        for (String gadget : arrayGadgets)
-                            listGadgets.add(gadget);
-                    }
-
-                    HashSet<String> hashSetFeatures = new HashSet<>();
-                    if(! features.isEmpty())
-                    {
-                        String[] arrayFeatures = features.split(";");
-                        for (String feature : arrayFeatures)
-                            hashSetFeatures.add(feature);
-                    }
-
-                    listRecipes.add(
+                    internalRecipeList.add(
                             new Recipe(
                                     name,
                                     Byte.parseByte(typeOfFood),
@@ -126,70 +101,78 @@ public class RecipesController implements Initializable
         }
         catch (IOException e)
         {
-            listRecipes.clear();
+            internalRecipeList.clear();
             showAlert("Error",e.getMessage(),"");
         }
 
-        Collections.sort(listRecipes);
-        lstRecipes.setItems(listRecipes);
+        Collections.sort(internalRecipeList);
+        lstRecipes.setItems(internalRecipeList);
     }
 
-    public void saveAndUpdateRecipes()
+    private ArrayList<String> extractStringFromFormattedString(String formattedString)
     {
-        Collections.sort(listRecipes);
+        ArrayList<String> listString = new ArrayList<>();
+        if(! formattedString.isEmpty())
+        {
+            String[] arrayInstructions = formattedString.split(";");
+            for (String instruction : arrayInstructions)
+                listString.add(instruction);
+        }
+
+        return listString;
+    }
+
+    private ArrayList<StockIngredient> extractIngredientsFromString(String ingredients)
+    {
+        ArrayList<StockIngredient> listIngredients = new ArrayList<>();
+        if(! ingredients.isEmpty())
+        {
+            String[] arrayIngredients = ingredients.split(";");
+            for (String line : arrayIngredients)
+                listIngredients.add(
+                        new StockIngredient(
+                                InitialController.ingredients.get(line.split(":")[0]),
+                                Short.parseShort(line.split(":")[1])));
+        }
+
+        return listIngredients;
+    }
+
+    private HashSet<String> extractFeaturesFromString(String features)
+    {
+        HashSet<String> hashSetFeatures = new HashSet<>();
+        if(! features.isEmpty())
+        {
+            String[] arrayFeatures = features.split(";");
+            for (String feature : arrayFeatures)
+                hashSetFeatures.add(feature);
+        }
+
+        return hashSetFeatures;
+    }
+
+    public void updateAndSaveRecipes()
+    {
+        Collections.sort(internalRecipeList);
         PrintWriter recipesFile = null;
 
         try
         {
             recipesFile = new PrintWriter("src/files/data/recipes.txt");
-            for(int i = 0; i < listRecipes.size(); i++)
+            for(int i = 0; i < internalRecipeList.size(); i++)
             {
-                recipesFile.println(listRecipes.get(i).getName());
-                recipesFile.println(listRecipes.get(i).getTypeOfFood());
-
-                ArrayList<String> instructions = listRecipes.get(i).getInstructions();
-                for(int j = 0; j < instructions.size(); j++)
-                {
-                    recipesFile.print(instructions.get(j));
-                    if(j != instructions.size() - 1)
-                        recipesFile.print(";");
-                }
-                recipesFile.println("");
-
-                ArrayList<StockIngredient> ingredients = listRecipes.get(i).getIngredients();
-                for(int j = 0; j < ingredients.size(); j++)
-                {
-                    recipesFile.print(ingredients.get(j).getIngredient().getName() +
-                            ":" + ingredients.get(j).getAmount());
-                    if(j != ingredients.size() - 1)
-                        recipesFile.print(";");
-                }
-                recipesFile.println("");
-
-                ArrayList<String> gadgets = listRecipes.get(i).getGadgets();
-                for(int j = 0; j < gadgets.size(); j++)
-                {
-                    recipesFile.print(gadgets.get(j));
-                    if(j != gadgets.size() - 1)
-                        recipesFile.print(";");
-                }
-                recipesFile.println("");
-
-                recipesFile.println(listRecipes.get(i).getTimeNeeded());
-                recipesFile.println(listRecipes.get(i).getAmountOfRations());
-
-                HashSet<String> features = listRecipes.get(i).getFeatures();
-                boolean isTheFirst = true;
-                for(String feature : features)
-                {
-                    if(! isTheFirst)
-                        recipesFile.print(";");
-                    else
-                        isTheFirst = false;
-
-                    recipesFile.print(feature);
-                }
-                recipesFile.println("");
+                recipesFile.println(internalRecipeList.get(i).getName());
+                recipesFile.println(internalRecipeList.get(i).getTypeOfFood());
+                printStringListIntoFile(recipesFile,
+                        internalRecipeList.get(i).getInstructions());
+                printIngredientsIntoFile(recipesFile,
+                        internalRecipeList.get(i).getIngredients());
+                printStringListIntoFile(recipesFile,
+                        internalRecipeList.get(i).getGadgets());
+                recipesFile.println(internalRecipeList.get(i).getTimeNeeded());
+                recipesFile.println(internalRecipeList.get(i).getAmountOfRations());
+                printFeaturesIntoFile(recipesFile,
+                        internalRecipeList.get(i).getFeatures());
             }
         }
         catch (FileNotFoundException e) {
@@ -200,23 +183,45 @@ public class RecipesController implements Initializable
                 recipesFile.close();
         }
 
-        lstRecipes.setItems(listRecipes);
+        lstRecipes.setItems(internalRecipeList);
     }
 
-    public void deleteRecipe(ActionEvent actionEvent)
+    private void printStringListIntoFile(PrintWriter recipesFile, ArrayList<String> instructions)
     {
-        Recipe stockIngredientSelected = lstRecipes.getSelectionModel().getSelectedItem();
-
-        if(stockIngredientSelected != null)
+        for(int j = 0; j < instructions.size(); j++)
         {
-            listRecipes.remove(stockIngredientSelected);
-            saveAndUpdateRecipes();
+            recipesFile.print(instructions.get(j));
+            if(j != instructions.size() - 1)
+                recipesFile.print(";");
         }
+        recipesFile.println("");
+    }
 
-        else
-            showAlert("Error",
-                    "Error removing recipe",
-                    "No recipe selected");
+    private void printIngredientsIntoFile(PrintWriter recipesFile, ArrayList<StockIngredient> ingredients)
+    {
+        for(int j = 0; j < ingredients.size(); j++)
+        {
+            recipesFile.print(ingredients.get(j).getIngredient().getName() +
+                    ":" + ingredients.get(j).getAmount());
+            if(j != ingredients.size() - 1)
+                recipesFile.print(";");
+        }
+        recipesFile.println("");
+    }
+
+    private void printFeaturesIntoFile(PrintWriter recipesFile, HashSet<String> features)
+    {
+        boolean isTheFirst = true;
+        for(String feature : features)
+        {
+            if(! isTheFirst)
+                recipesFile.print(";");
+            else
+                isTheFirst = false;
+
+            recipesFile.print(feature);
+        }
+        recipesFile.println("");
     }
 
     public void searchRecipe(KeyEvent keyEvent)
@@ -233,22 +238,14 @@ public class RecipesController implements Initializable
 
     private ObservableList<Recipe> getSearchRecipes(String subString)
     {
-        ArrayList<String> filterFeatures = new ArrayList<>();
-        if(cbxVegetarian.isSelected())
-            filterFeatures.add(cbxVegetarian.getText());
-        if(cbxVegan.isSelected())
-            filterFeatures.add(cbxVegan.getText());
-        if(cbxNoLactose.isSelected())
-            filterFeatures.add(cbxNoLactose.getText());
-        if(cbxNoGluten.isSelected())
-            filterFeatures.add(cbxNoGluten.getText());
+        ArrayList<String> filterFeatures = extractActiveFilters();
 
         ObservableList<Recipe> listRecipesCopy = FXCollections.observableArrayList();
         boolean meetsTheFeatures;
-        for(int i = 0; i <listRecipes.size(); i++)
+        for(int i = 0; i < internalRecipeList.size(); i++)
         {
             meetsTheFeatures = false;
-            Recipe recipe = listRecipes.get(i);
+            Recipe recipe = internalRecipeList.get(i);
             if (recipe.getName().toUpperCase().contains(subString))
                 meetsTheFeatures = true;
 
@@ -263,19 +260,25 @@ public class RecipesController implements Initializable
             }
 
             if(meetsTheFeatures)
-                listRecipesCopy.add(listRecipes.get(i));
+                listRecipesCopy.add(internalRecipeList.get(i));
         }
 
         return listRecipesCopy;
     }
 
-    private void showAlert(String title, String header, String context)
+    private ArrayList<String> extractActiveFilters()
     {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(header);
-        alert.setContentText(context);
-        alert.showAndWait();
+        ArrayList<String> filterFeatures = new ArrayList<>();
+        if(cbxVegetarian.isSelected())
+            filterFeatures.add(cbxVegetarian.getText());
+        if(cbxVegan.isSelected())
+            filterFeatures.add(cbxVegan.getText());
+        if(cbxNoLactose.isSelected())
+            filterFeatures.add(cbxNoLactose.getText());
+        if(cbxNoGluten.isSelected())
+            filterFeatures.add(cbxNoGluten.getText());
+
+        return filterFeatures;
     }
 
     public void addRecipe(ActionEvent actionEvent)
@@ -284,9 +287,35 @@ public class RecipesController implements Initializable
         Recipe newRecipe = addDialogRecipes.showAndReturnNewRecipe();
         if(newRecipe != null)
         {
-            listRecipes.add(newRecipe);
-            saveAndUpdateRecipes();
+            if(internalRecipeList.contains(newRecipe))
+                showAlert("Error",
+                        "Repeated recipe",
+                        "The new recipe is considered to be " +
+                                "already on the list because its name " +
+                                "matches an existing one");
+            else
+            {
+                internalRecipeList.add(newRecipe);
+                updateAndSaveRecipes();
+            }
         }
+    }
+
+    public void deleteRecipe(ActionEvent actionEvent)
+    {
+        Recipe stockIngredientSelected = lstRecipes.getSelectionModel().getSelectedItem();
+
+        if(stockIngredientSelected != null)
+        {
+            internalRecipeList.remove(stockIngredientSelected);
+            updateAndSaveRecipes();
+            applyFilters();
+        }
+
+        else
+            showAlert("Error",
+                    "Error removing recipe",
+                    "No recipe selected");
     }
 
     public void editRecipe(ActionEvent actionEvent)
@@ -297,9 +326,9 @@ public class RecipesController implements Initializable
             Recipe editedRecipe = new EditDialogRecipe(recipeSelected).showAndReturnRecipe();
             if(editedRecipe != null)
             {
-                listRecipes.remove(recipeSelected);
-                listRecipes.add(editedRecipe);
-                saveAndUpdateRecipes();
+                internalRecipeList.remove(recipeSelected);
+                internalRecipeList.add(editedRecipe);
+                updateAndSaveRecipes();
             }
         }
         else
@@ -313,18 +342,11 @@ public class RecipesController implements Initializable
         Recipe recipeSelected = lstRecipes.getSelectionModel().getSelectedItem();
         if(recipeSelected != null)
         {
-            Recipe editedRecipe = new ViewDialogRecipe(recipeSelected).showAndReturnRecipe();
-            if(editedRecipe != null)
-            {
-                listRecipes.remove(recipeSelected);
-                listRecipes.add(editedRecipe);
-                saveAndUpdateRecipes();
-            }
+            new ViewDialogRecipe(recipeSelected).showRecipe();
         }
         else
             showAlert("Error",
                     "Error viewing recipe",
                     "No recipe selected");
-
     }
 }

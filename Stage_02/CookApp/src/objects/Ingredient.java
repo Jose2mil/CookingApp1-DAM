@@ -62,9 +62,4 @@ public class Ingredient implements Comparable<Ingredient>
     {
         return this.getName().compareTo(i.getName());
     }
-
-    public void modifyAmount(short amount)
-    {
-        //TODO
-    }
 }
