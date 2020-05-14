@@ -34,6 +34,8 @@ public class RecipesController implements Initializable
     public CheckBox cbxVegan;
     public CheckBox cbxNoLactose;
     public CheckBox cbxNoGluten;
+    public RadioButton rbnOrderByNeededTime;
+    public RadioButton rbtAlphabeticalOrder;
     ObservableList<Recipe> internalRecipeList;
 
     @Override
@@ -105,7 +107,7 @@ public class RecipesController implements Initializable
             showAlert("Error",e.getMessage(),"");
         }
 
-        Collections.sort(internalRecipeList);
+        sortRecipes();
         lstRecipes.setItems(internalRecipeList);
     }
 
@@ -153,7 +155,7 @@ public class RecipesController implements Initializable
 
     public void updateAndSaveRecipes()
     {
-        Collections.sort(internalRecipeList);
+        sortRecipes();
         PrintWriter recipesFile = null;
 
         try
@@ -184,6 +186,19 @@ public class RecipesController implements Initializable
         }
 
         lstRecipes.setItems(internalRecipeList);
+    }
+
+    public void sortRecipes()
+    {
+        if(rbtAlphabeticalOrder.isSelected())
+            Collections.sort(internalRecipeList);
+        else if(rbnOrderByNeededTime.isSelected())
+            Collections.sort(internalRecipeList, new Comparator<Recipe>() {
+                @Override
+                public int compare(Recipe recipe01, Recipe recipe02) {
+                    return Integer.compare(recipe01.getTimeNeeded(),recipe02.getTimeNeeded());
+                }
+            });
     }
 
     private void printStringListIntoFile(PrintWriter recipesFile, ArrayList<String> instructions)
@@ -233,6 +248,7 @@ public class RecipesController implements Initializable
     public void applyFilters()
     {
         String subString = txtSearch.getText().toUpperCase();
+        sortRecipes();
         lstRecipes.setItems(getSearchRecipes(subString));
     }
 

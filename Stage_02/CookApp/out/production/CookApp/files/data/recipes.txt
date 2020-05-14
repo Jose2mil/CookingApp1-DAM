@@ -38,22 +38,6 @@ paso0;paso1;paso2
 0
 0
 
-instrucciones
-1
-paso00;paso01;paso02;paso03
-
-
-0
-0
-
-kkuhb
-1
-
-
-
-0
-0
-
 nueva
 1
 
