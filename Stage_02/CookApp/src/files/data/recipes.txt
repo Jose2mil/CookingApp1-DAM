@@ -1,48 +1,32 @@
-holabuenas
-1
-paso0;paso1;paso2
-
-
+Baked potatoes
 0
+Wash the potatoes very well with cold water since we are going to bake them and eat with skin, although if you prefer you can also peel them but I assure you that with skin they are great.;Cut the potatoes as you like. I suggest you do it in the following way: cut it in half lengthwise, cut each half in half again and in 2 or 3 parts depending on their size.;Pon las patatas en una bandeja de horno y, para evitar que se peguen las patatas en ella, fórrala previamente con papel de horno.;Preheat the oven to 200ºC with heat up and down and fan.;Échales por encima un chorrito de aceite de oliva virgen extra y revuélvelas un poco para que queden impregnadas.;Topped with bits of bacon and tomato.;Vuelve a moverlas (puede ser con una cuchara o unas pinzas de cocina) para que queden bien impregnadas con el aliño. Como a mi me gusta darles la vuelta a mitad del horneado, para tener buena referencia lo que hago es primero colocarlas todas con la piel hacia abajo y así sabré luego a cuáles les he dado la vuelta y a cuáles no.;When the oven has reached 200ºC, put the tray with the potatoes in the oven at medium height and bake for 15-20 minutes or until you see that they begin to brown.;Take the tray out of the oven and turn all the potatoes over, remember that we had left them with the skin down so you must leave them so that the skin is now visible.;Vuelve a introducir la bandeja en el horno y hornea unos 10-15 minutos, de nuevo hasta que veas que están empezando a dorarse y a tu gusto. También puedes probar a pinchar una y si está ligeramente crujiente por fuera pero tierna por dentro, ya están listas.
+Bacon:200;Olive oil:70;Potato:600;Salt:20;Tomato:3
+Oven;Kitchen's clamps
+60
+5
+No Lactose
+Hake with a touch of lemon
 0
-
-nueva
-1
-
-
-
-0
-0
-
-Tortilla
-1
-asasdf
-
-
+You must prepare the fish first. Normally they prepare it clean in the fish shop, so just wash it well with water and you should season it inside and out.;En una fuente o cazuela, yo he usado una bandeja de aluminio antiadherente de Le Creuset que sirve para cualquier tipo de fuego, pon un poco de aceite y dora el pescado a fuego fuerte durante un par de minutos por cada lado. Debe quedar aún crudo por dentro, sácalo y reserva para terminar en el horno.;Now, add a couple more tablespoons of olive oil and add well-cut onion. Sauté over medium heat until almost done.;Then add the lime juice. Let it cook for a few minutes until most of it evaporates.;Pon luego algunas rodajas de lima encima del pescado.;Put in the preheated oven at 200ºC for about 10-12 minutes to finish reducing the juice and finish cooking the fish.
+Hake:1;Lemon:1;Olive oil:50;Onion:2;Salt:10
+Casserole;Oven
+30
 2
-3
-
-Paella
-1
-Slow cooking
-Bacon:200;Bonito:100;Horse meat:50
-Pan
-120
-4
-No Gluten
-Marmitako
-1
-Step1;Step2;Step3;Step4;Step5;Step6;Step7;Step8
-Bacon:200;Bonito:1500;Cauliflower:5;Chickpeas:100;Mango:1;Olive oil:150;Potato:3;Salt:50
-pan1;wooden spoon;Glasses;Large table;Cook hat
-180
-12
-No Gluten;Vegan
-Receta01
-1
-paso01;paso02;pasoFinal
-Apple:3;Bacon:300;Salt:10
-Sarten;platillos
-240
-7
 No Lactose;No Gluten
+Lemonade
+0
+Wash a lemon very well and peel its skin, try to barely have any white part, and put it in the glass of the mixer or whatever you are going to use to prepare it.;Peel the 4 lemons completely so that you are left with only the segments, nothing white or skin. Also remove all the nuggets you can.;Put the lemons in the mixer glass, and add half the water (about 250 gr).;Blend everything until you have a paste. We have used our glass mixer and in 30 seconds we had everything well crushed.;Vierte la mezcla sobre un colador y cuélala. Hay quien prefiere no colarlo, pero os aseguro que está muchísimo mejor colado ya que siempre queda alguna pepita y restos de piel, y al tomarlo se nota.;Enjuaga el vaso de la batidora, vierte en él la mezcla ya colada, y añade el resto del agua, los cubitos y el azúcar. Vuelve a triturarlo todo hasta que los cubitos prácticamente se hayan deshecho, y ya la tienes lista.
+Lemon:3;Sugar:80
+Squeezer;Strainer
+10
+8
+Vegetarian;No Lactose;No Gluten;Vegan
+Spinach salad with mushrooms and apple
+1
+Pon una sartén sobre el fuego a temperatura fuerte.;Lava las espinacas encima de un colador y con un chorro de agua fría, y deja que escurran bien.;Peel the apple and cut into cubes.;Clean the mushrooms of impurities with a little paper, cut the root if it contains dirt, and cut them into very thin slices.;Now we are going to assemble the salad, which can be in a platter to serve in the center, or in individual dishes.;Place the spinach, then distribute the mushroom slices and apple cubes on top.;Dress with a splash of olive oil and salt.
+Apple:1;Mushrooms:100;Olive oil:10;Salt:4;Spinach:250
+Skillet;Strainer
+15
+1
+Vegetarian;No Lactose;No Gluten;Vegan
